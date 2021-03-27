@@ -7,8 +7,21 @@ class SidePanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.blue,
+    return Column(
+      children: [
+        Text(
+          "Name Namename Namename",
+          style: Theme.of(context).textTheme.headline1?.copyWith(height: 1),
+        ),
+        Text(
+          "DFKSDFK DSFKDSNF DFS",
+          style: Theme.of(context).textTheme.headline1?.copyWith(height: 1),
+        ),
+        Text(
+          "qwqqwqe ewfrewg ewfew",
+          style: Theme.of(context).textTheme.headline1?.copyWith(height: 1),
+        ),
+      ],
     );
   }
 }

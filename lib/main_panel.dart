@@ -7,8 +7,21 @@ class MainPanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.yellow,
+    return Column(
+      children: [
+        Text(
+          "Name Namename Namename",
+          style: Theme.of(context).textTheme.headline3?.copyWith(height: 1),
+        ),
+        Text(
+          "Name Namename Namename",
+          style: Theme.of(context).textTheme.headline3?.copyWith(height: 1),
+        ),
+        Text(
+          "Name Namename Namename",
+          style: Theme.of(context).textTheme.headline3?.copyWith(height: 1),
+        ),
+      ],
     );
   }
 }

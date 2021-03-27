@@ -36,37 +36,41 @@ class MyApp extends StatelessWidget {
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const Header(),
-        Expanded(
-          child: Row(
-            children: [
-              Expanded(
-                child: Container(
-                  padding: const EdgeInsets.symmetric(
-                    vertical: 38,
-                    horizontal: 38,
+    return Scrollbar(
+      isAlwaysShown: true,
+      child: ListView(
+        children: [
+          const Header(),
+          Expanded(
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 38,
+                      horizontal: 38,
+                    ),
+                    color: Colors.green,
+                    child: const SidePanel(),
                   ),
-                  color: Colors.green,
-                  child: const SidePanel(),
                 ),
-              ),
-              Expanded(
-                flex: 2,
-                child: Container(
-                  padding: const EdgeInsets.symmetric(
-                    vertical: 38,
-                    horizontal: 38,
+                Expanded(
+                  flex: 2,
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 38,
+                      horizontal: 38,
+                    ),
+                    color: Colors.red,
+                    child: const MainPanel(),
                   ),
-                  color: Colors.red,
-                  child: const MainPanel(),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
