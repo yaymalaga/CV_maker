@@ -19,14 +19,13 @@ class Header extends StatelessWidget {
                 vertical: 38,
                 horizontal: 38,
               ),
-              color: Colors.orange,
               child: LayoutBuilder(
                 builder: (context, constraint) => Container(
                   width: constraint.maxWidth,
                   height: constraint.maxWidth,
                   decoration: const BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Colors.white,
+                    color: Colors.yellow,
                   ),
                   child: Center(
                     child: Text(
@@ -45,21 +44,26 @@ class Header extends StatelessWidget {
                 vertical: 38,
                 horizontal: 38,
               ),
-              color: Colors.red,
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "Name Namename Namename",
-                    style: Theme.of(context)
-                        .textTheme
-                        .headline3
-                        ?.copyWith(height: 1),
+                    "Name1 Name2 Name3",
+                    style: Theme.of(context).textTheme.headline2?.copyWith(
+                          height: 1,
+                          color: Colors.lightBlue.shade700,
+                        ),
                   ),
-                  Text(
-                    "Prime minister of New Zealand".toUpperCase(),
-                    style: Theme.of(context).textTheme.headline5,
+                  Container(
+                    margin: const EdgeInsets.only(top: 10),
+                    child: Text(
+                      "Whatever Whatever Whatever Whatever".toUpperCase(),
+                      style: Theme.of(context).textTheme.headline6?.copyWith(
+                            color: Colors.grey.shade800,
+                            fontWeight: FontWeight.bold,
+                          ),
+                    ),
                   ),
                 ],
               ),
