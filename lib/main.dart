@@ -1,8 +1,8 @@
-import 'package:flutter/material.dart';
+import 'dart:typed_data';
 
-import 'header.dart';
-import 'main_panel.dart';
-import 'side_panel.dart';
+import 'package:cv_maker/resume.dart';
+import 'package:flutter/material.dart';
+import 'package:screenshot/screenshot.dart';
 
 void main() {
   runApp(MyApp());
@@ -33,44 +33,51 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
+  @override
+  _HomeState createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  late ScreenshotController _screenshotController;
+  Uint8List? _imageFile;
+
+  @override
+  void initState() {
+    super.initState();
+
+    _screenshotController = ScreenshotController();
+  }
+
+  void takeScreenshot() {
+    _screenshotController.capture().then((image) {
+      setState(() {
+        _imageFile = image;
+      });
+    }).catchError((onError) {
+      print(onError);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scrollbar(
-      isAlwaysShown: true,
-      child: ListView(
-        children: [
-          const Header(),
-          Expanded(
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Expanded(
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(
-                      vertical: 38,
-                      horizontal: 38,
-                    ),
-                    color: Colors.green,
-                    child: const SidePanel(),
-                  ),
-                ),
-                Expanded(
-                  flex: 2,
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(
-                      vertical: 38,
-                      horizontal: 38,
-                    ),
-                    color: Colors.red,
-                    child: const MainPanel(),
-                  ),
-                ),
-              ],
+    return (_imageFile == null)
+        ? GestureDetector(
+            onTap: () {
+              takeScreenshot();
+            },
+            child: SingleChildScrollView(
+              child: Screenshot(
+                controller: _screenshotController,
+                child: const Resume(),
+              ),
             ),
-          ),
-        ],
-      ),
-    );
+          )
+        : ListView(
+            children: [
+              Image.memory(_imageFile!),
+              const Text("WOW"),
+            ],
+          );
   }
 }
