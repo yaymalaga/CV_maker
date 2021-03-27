@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+import 'header.dart';
+import 'main_panel.dart';
+import 'side_panel.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -40,45 +44,7 @@ class Home extends StatelessWidget {
             horizontal: 36,
           ),
           color: Colors.orange,
-          child: Row(
-            children: [
-              Container(
-                width: 150,
-                height: 150,
-                decoration: const BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: Colors.white,
-                ),
-                child: Center(
-                  child: Text(
-                    "YM",
-                    style: Theme.of(context).textTheme.headline5,
-                  ),
-                ),
-              ),
-              Expanded(
-                child: Container(
-                  margin: const EdgeInsets.only(left: 48),
-                  color: Colors.purple,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Name Namename Namename",
-                        overflow: TextOverflow.clip,
-                        style: Theme.of(context).textTheme.headline3,
-                      ),
-                      Text(
-                        "Prime minister of New Zealand".toUpperCase(),
-                        overflow: TextOverflow.clip,
-                        style: Theme.of(context).textTheme.headline5,
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ],
-          ),
+          child: const Header(),
         ),
         Expanded(
           child: Row(
@@ -90,9 +56,7 @@ class Home extends StatelessWidget {
                     horizontal: 36,
                   ),
                   color: Colors.green,
-                  child: Container(
-                    color: Colors.blue,
-                  ),
+                  child: const SidePanel(),
                 ),
               ),
               Expanded(
@@ -103,9 +67,7 @@ class Home extends StatelessWidget {
                     horizontal: 36,
                   ),
                   color: Colors.red,
-                  child: Container(
-                    color: Colors.yellow,
-                  ),
+                  child: const MainPanel(),
                 ),
               ),
             ],
