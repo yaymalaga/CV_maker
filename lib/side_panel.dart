@@ -12,10 +12,9 @@ class SidePanel extends StatelessWidget {
       children: [
         Text(
           "Topic 1".toUpperCase(),
-          style: Theme.of(context).textTheme.subtitle1?.copyWith(
+          style: Theme.of(context).textTheme.subtitle2?.copyWith(
                 color: Colors.grey.shade900,
                 fontWeight: FontWeight.w900,
-                fontSize: 18,
               ),
         ),
         Container(
@@ -30,16 +29,15 @@ class SidePanel extends StatelessWidget {
         SizedBox(height: 30),
         Text(
           "Personal details".toUpperCase(),
-          style: Theme.of(context).textTheme.subtitle1?.copyWith(
+          style: Theme.of(context).textTheme.subtitle2?.copyWith(
                 color: Colors.grey.shade900,
                 fontWeight: FontWeight.bold,
-                fontSize: 18,
               ),
         ),
         SizedBox(height: 10),
         Text(
           "Birthday",
-          style: Theme.of(context).textTheme.subtitle1?.copyWith(
+          style: Theme.of(context).textTheme.subtitle2?.copyWith(
                 color: Colors.lightBlue.shade700,
                 fontWeight: FontWeight.bold,
               ),
@@ -56,7 +54,7 @@ class SidePanel extends StatelessWidget {
         SizedBox(height: 10),
         Text(
           "Nationality",
-          style: Theme.of(context).textTheme.subtitle1?.copyWith(
+          style: Theme.of(context).textTheme.subtitle2?.copyWith(
                 color: Colors.lightBlue.shade700,
                 fontWeight: FontWeight.bold,
               ),
@@ -73,10 +71,9 @@ class SidePanel extends StatelessWidget {
         SizedBox(height: 30),
         Text(
           "Contact".toUpperCase(),
-          style: Theme.of(context).textTheme.subtitle1?.copyWith(
+          style: Theme.of(context).textTheme.subtitle2?.copyWith(
                 color: Colors.grey.shade900,
                 fontWeight: FontWeight.bold,
-                fontSize: 18,
               ),
         ),
         Container(

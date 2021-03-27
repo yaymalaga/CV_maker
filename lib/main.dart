@@ -26,18 +26,19 @@ class MyApp extends StatelessWidget {
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
         primarySwatch: Colors.blue,
-        textTheme: GoogleFonts.quicksandTextTheme(
+        textTheme: GoogleFonts.interTextTheme(
           Theme.of(context).textTheme,
         ),
       ),
       home: Scaffold(
+        backgroundColor: Colors.lightBlue.shade100,
         body: ConstrainedBox(
           constraints: const BoxConstraints(
             maxWidth: 760, // ?¿?¿? A4 width: 210 -> 1mm = 6.2992dp
           ),
           child: Container(
             child: Home(),
-            color: Colors.green.shade100,
+            color: Colors.white,
           ),
         ),
       ),

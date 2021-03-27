@@ -15,10 +15,7 @@ class Header extends StatelessWidget {
         children: [
           Expanded(
             child: Container(
-              padding: const EdgeInsets.symmetric(
-                vertical: 38,
-                horizontal: 38,
-              ),
+              padding: const EdgeInsets.fromLTRB(36, 42, 18, 18),
               child: LayoutBuilder(
                 builder: (context, constraint) => Container(
                   width: constraint.maxWidth,
@@ -40,17 +37,14 @@ class Header extends StatelessWidget {
           Expanded(
             flex: 2,
             child: Container(
-              padding: const EdgeInsets.symmetric(
-                vertical: 38,
-                horizontal: 38,
-              ),
+              padding: const EdgeInsets.fromLTRB(16, 42, 36, 18),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     "Name1 Name2 Name3",
-                    style: Theme.of(context).textTheme.headline2?.copyWith(
+                    style: Theme.of(context).textTheme.headline3?.copyWith(
                           height: 1,
                           color: Colors.lightBlue.shade700,
                         ),
@@ -59,9 +53,9 @@ class Header extends StatelessWidget {
                     margin: const EdgeInsets.only(top: 10),
                     child: Text(
                       "Whatever Whatever Whatever Whatever".toUpperCase(),
-                      style: Theme.of(context).textTheme.headline6?.copyWith(
+                      style: Theme.of(context).textTheme.subtitle1?.copyWith(
                             color: Colors.grey.shade800,
-                            fontWeight: FontWeight.bold,
+                            fontWeight: FontWeight.w900,
                           ),
                     ),
                   ),

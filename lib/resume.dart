@@ -20,20 +20,14 @@ class Resume extends StatelessWidget {
           children: [
             Expanded(
               child: Container(
-                padding: const EdgeInsets.symmetric(
-                  vertical: 38,
-                  horizontal: 38,
-                ),
+                padding: const EdgeInsets.fromLTRB(36, 18, 18, 42),
                 child: const SidePanel(),
               ),
             ),
             Expanded(
               flex: 2,
               child: Container(
-                padding: const EdgeInsets.symmetric(
-                  vertical: 38,
-                  horizontal: 38,
-                ),
+                padding: const EdgeInsets.fromLTRB(18, 18, 36, 42),
                 child: const MainPanel(),
               ),
             ),
