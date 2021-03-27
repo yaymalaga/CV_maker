@@ -11,17 +11,39 @@ class MainPanel extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          "Name Namename Namename",
-          style: Theme.of(context).textTheme.headline3?.copyWith(height: 1),
+          "Professional experience".toUpperCase(),
+          style: Theme.of(context).textTheme.subtitle2?.copyWith(
+                color: Colors.grey.shade900,
+                fontWeight: FontWeight.w900,
+              ),
         ),
+        Container(
+          margin: const EdgeInsets.only(top: 6),
+          child: Text(
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            style: Theme.of(context).textTheme.bodyText1?.copyWith(
+                  color: Colors.grey.shade700,
+                ),
+          ),
+        ),
+        SizedBox(height: 30),
         Text(
-          "Name Namename Namename",
-          style: Theme.of(context).textTheme.headline3?.copyWith(height: 1),
+          "Education".toUpperCase(),
+          style: Theme.of(context).textTheme.subtitle2?.copyWith(
+                color: Colors.grey.shade900,
+                fontWeight: FontWeight.w900,
+              ),
         ),
-        Text(
-          "Name Namename Namename",
-          style: Theme.of(context).textTheme.headline3?.copyWith(height: 1),
+        Container(
+          margin: const EdgeInsets.only(top: 6),
+          child: Text(
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            style: Theme.of(context).textTheme.bodyText1?.copyWith(
+                  color: Colors.grey.shade700,
+                ),
+          ),
         ),
+        SizedBox(height: 30),
       ],
     );
   }
