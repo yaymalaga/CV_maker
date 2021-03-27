@@ -30,6 +30,34 @@ class MyApp extends StatelessWidget {
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Row(
+      children: [
+        Expanded(
+          child: Container(
+            padding: const EdgeInsets.symmetric(
+              vertical: 42,
+              horizontal: 36,
+            ),
+            color: Colors.green,
+            child: Container(
+              color: Colors.blue,
+            ),
+          ),
+        ),
+        Expanded(
+          flex: 2,
+          child: Container(
+            padding: const EdgeInsets.symmetric(
+              vertical: 42,
+              horizontal: 36,
+            ),
+            color: Colors.red,
+            child: Container(
+              color: Colors.yellow,
+            ),
+          ),
+        ),
+      ],
+    );
   }
 }
