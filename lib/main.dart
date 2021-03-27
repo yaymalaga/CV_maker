@@ -38,22 +38,15 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
-          padding: const EdgeInsets.symmetric(
-            vertical: 42,
-            horizontal: 36,
-          ),
-          color: Colors.orange,
-          child: const Header(),
-        ),
+        const Header(),
         Expanded(
           child: Row(
             children: [
               Expanded(
                 child: Container(
                   padding: const EdgeInsets.symmetric(
-                    vertical: 42,
-                    horizontal: 36,
+                    vertical: 38,
+                    horizontal: 38,
                   ),
                   color: Colors.green,
                   child: const SidePanel(),
@@ -63,8 +56,8 @@ class Home extends StatelessWidget {
                 flex: 2,
                 child: Container(
                   padding: const EdgeInsets.symmetric(
-                    vertical: 42,
-                    horizontal: 36,
+                    vertical: 38,
+                    horizontal: 38,
                   ),
                   color: Colors.red,
                   child: const MainPanel(),

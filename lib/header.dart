@@ -9,35 +9,47 @@ class Header extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Container(
-          width: 150,
-          height: 150,
-          decoration: const BoxDecoration(
-            shape: BoxShape.circle,
-            color: Colors.white,
-          ),
-          child: Center(
-            child: Text(
-              "YM",
-              style: Theme.of(context).textTheme.headline5,
+        Expanded(
+          child: Container(
+            padding: const EdgeInsets.symmetric(
+              vertical: 38,
+              horizontal: 38,
+            ),
+            color: Colors.orange,
+            child: LayoutBuilder(
+              builder: (context, constraint) => Container(
+                width: constraint.maxWidth,
+                height: constraint.maxWidth,
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Colors.white,
+                ),
+                child: Center(
+                  child: Text(
+                    "YM",
+                    style: Theme.of(context).textTheme.headline5,
+                  ),
+                ),
+              ),
             ),
           ),
         ),
         Expanded(
+          flex: 2,
           child: Container(
-            margin: const EdgeInsets.only(left: 48),
-            color: Colors.purple,
+            padding: const EdgeInsets.symmetric(
+              vertical: 38,
+              horizontal: 38,
+            ),
+            color: Colors.red,
             child: Column(
+              mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  "Name Namename Namename",
-                  overflow: TextOverflow.clip,
-                  style: Theme.of(context).textTheme.headline3,
-                ),
+                Text("Name Namename Namename",
+                    style: Theme.of(context).textTheme.headline3),
                 Text(
                   "Prime minister of New Zealand".toUpperCase(),
-                  overflow: TextOverflow.clip,
                   style: Theme.of(context).textTheme.headline5,
                 ),
               ],
