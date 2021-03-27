@@ -31,7 +31,15 @@ class MyApp extends StatelessWidget {
         ),
       ),
       home: Scaffold(
-        body: Home(),
+        body: ConstrainedBox(
+          constraints: const BoxConstraints(
+            maxWidth: 760, // ?¿?¿? A4 width: 210 -> 1mm = 6.2992dp
+          ),
+          child: Container(
+            child: Home(),
+            color: Colors.green.shade100,
+          ),
+        ),
       ),
     );
   }
