@@ -56,6 +56,29 @@ class MainPanel extends StatelessWidget {
           isLast: true,
         ),
         const SizedBox(height: 30),
+        Row(
+          children: [
+            const SkillsSection(),
+            const SizedBox(width: 64),
+            const SkillsSection(),
+          ],
+        ),
+        const SizedBox(height: 30),
+      ],
+    );
+  }
+}
+
+class SkillsSection extends StatelessWidget {
+  const SkillsSection({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
         Text(
           "Skills".toUpperCase(),
           style: Theme.of(context).textTheme.subtitle2?.copyWith(
