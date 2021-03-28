@@ -15,20 +15,18 @@ class Header extends StatelessWidget {
         children: [
           Expanded(
             child: Container(
-              padding: const EdgeInsets.fromLTRB(36, 42, 18, 18),
+              padding: const EdgeInsets.fromLTRB(36, 42, 18, 6),
               child: LayoutBuilder(
                 builder: (context, constraint) => Container(
                   width: constraint.maxWidth,
                   height: constraint.maxWidth,
                   decoration: const BoxDecoration(
                     shape: BoxShape.circle,
-                    color: Colors.yellow,
-                  ),
-                  child: Center(
-                    child: Text(
-                      "YM",
-                      style: Theme.of(context).textTheme.headline5,
-                    ),
+                    //color: Colors.yellow,
+                    image: DecorationImage(
+                        image: NetworkImage(
+                            'https://c8.alamy.com/comp/PM7763/film-still-publicity-still-from-the-simpsons-homer-simpson-circa-1999-2000-file-reference-30973786tha-for-editorial-use-only-all-rights-reserved-PM7763.jpg'),
+                        fit: BoxFit.cover),
                   ),
                 ),
               ),
