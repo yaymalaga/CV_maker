@@ -19,9 +19,9 @@ class MainPanel extends StatelessWidget {
         ),
         Container(
           margin: const EdgeInsets.only(top: 6),
-          child: Stepper(),
+          child: const Stepper(),
         ),
-        SizedBox(height: 30),
+        const SizedBox(height: 30),
         Text(
           "Education".toUpperCase(),
           style: Theme.of(context).textTheme.subtitle2?.copyWith(
@@ -38,7 +38,7 @@ class MainPanel extends StatelessWidget {
                 ),
           ),
         ),
-        SizedBox(height: 30),
+        const SizedBox(height: 30),
       ],
     );
   }
@@ -74,7 +74,7 @@ class Stepper extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(width: 12),
+            const SizedBox(width: 12),
             Text(
               "Birthday",
               style: Theme.of(context).textTheme.subtitle2?.copyWith(
@@ -85,21 +85,22 @@ class Stepper extends StatelessWidget {
           ],
         ),
         Container(
-          margin: EdgeInsets.only(left: 7.5),
-          padding: EdgeInsets.only(left: 20.5, top: 6, bottom: 15),
+          margin: const EdgeInsets.only(left: 7.5),
+          padding: const EdgeInsets.only(left: 20.5, top: 6, bottom: 15),
+          decoration: BoxDecoration(
+            border: Border(
+              left: BorderSide(
+                color: Colors.grey.shade300,
+                width: 2,
+              ),
+            ),
+          ),
           child: Text(
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             style: Theme.of(context).textTheme.bodyText1?.copyWith(
                   color: Colors.grey.shade700,
                 ),
           ),
-          decoration: BoxDecoration(
-              border: Border(
-            left: BorderSide(
-              color: Colors.grey.shade300,
-              width: 2,
-            ),
-          )),
         ),
         Row(
           children: [
@@ -121,7 +122,7 @@ class Stepper extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(width: 12),
+            const SizedBox(width: 12),
             Text(
               "Birthday",
               style: Theme.of(context).textTheme.subtitle2?.copyWith(
@@ -132,21 +133,22 @@ class Stepper extends StatelessWidget {
           ],
         ),
         Container(
-          margin: EdgeInsets.only(left: 7.5),
-          padding: EdgeInsets.only(left: 20.5, top: 6, bottom: 15),
+          margin: const EdgeInsets.only(left: 7.5),
+          padding: const EdgeInsets.only(left: 20.5, top: 6, bottom: 15),
+          decoration: BoxDecoration(
+            border: Border(
+              left: BorderSide(
+                color: Colors.grey.shade300,
+                width: 2,
+              ),
+            ),
+          ),
           child: Text(
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             style: Theme.of(context).textTheme.bodyText1?.copyWith(
                   color: Colors.grey.shade700,
                 ),
           ),
-          decoration: BoxDecoration(
-              border: Border(
-            left: BorderSide(
-              color: Colors.grey.shade300,
-              width: 2,
-            ),
-          )),
         ),
         Row(
           children: [
@@ -168,7 +170,7 @@ class Stepper extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(width: 12),
+            const SizedBox(width: 12),
             Text(
               "Birthday",
               style: Theme.of(context).textTheme.subtitle2?.copyWith(
@@ -179,8 +181,8 @@ class Stepper extends StatelessWidget {
           ],
         ),
         Container(
-          margin: EdgeInsets.only(left: 7.5),
-          padding: EdgeInsets.only(left: 20.5, top: 6, bottom: 15),
+          margin: const EdgeInsets.only(left: 7.5),
+          padding: const EdgeInsets.only(left: 20.5, top: 6, bottom: 15),
           child: Text(
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             style: Theme.of(context).textTheme.bodyText1?.copyWith(

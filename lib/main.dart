@@ -37,8 +37,8 @@ class MyApp extends StatelessWidget {
             maxWidth: 760, // ?¿?¿? A4 width: 210 -> 1mm = 6.2992dp
           ),
           child: Container(
-            child: Home(),
             color: Colors.white,
+            child: Home(),
           ),
         ),
       ),

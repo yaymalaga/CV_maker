@@ -26,7 +26,7 @@ class SidePanel extends StatelessWidget {
                 ),
           ),
         ),
-        SizedBox(height: 30),
+        const SizedBox(height: 30),
         Text(
           "Personal details".toUpperCase(),
           style: Theme.of(context).textTheme.subtitle2?.copyWith(
@@ -34,7 +34,7 @@ class SidePanel extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
         ),
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
         Text(
           "Birthday",
           style: Theme.of(context).textTheme.subtitle2?.copyWith(
@@ -51,7 +51,7 @@ class SidePanel extends StatelessWidget {
                 ),
           ),
         ),
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
         Text(
           "Nationality",
           style: Theme.of(context).textTheme.subtitle2?.copyWith(
@@ -68,7 +68,7 @@ class SidePanel extends StatelessWidget {
                 ),
           ),
         ),
-        SizedBox(height: 30),
+        const SizedBox(height: 30),
         Text(
           "Contact".toUpperCase(),
           style: Theme.of(context).textTheme.subtitle2?.copyWith(
