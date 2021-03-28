@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'simple_stepper.dart';
 import 'skill_bar.dart';
+import 'stepper_item.dart';
 
 class MainPanel extends StatelessWidget {
   const MainPanel({
@@ -20,9 +20,21 @@ class MainPanel extends StatelessWidget {
                 fontWeight: FontWeight.w900,
               ),
         ),
-        Container(
-          margin: const EdgeInsets.only(top: 6),
-          child: const SimpleStepper(),
+        const SizedBox(height: 6),
+        const StepperItem(
+          title: "Title",
+          subtitle1: "Office",
+          subtitle2: "FEB 2020 - DEC 2030",
+          text:
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        ),
+        const StepperItem(
+          title: "Title",
+          subtitle1: "Office",
+          subtitle2: "FEB 2020 - DEC 2030",
+          text:
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          isLast: true,
         ),
         const SizedBox(height: 30),
         Text(
@@ -32,14 +44,16 @@ class MainPanel extends StatelessWidget {
                 fontWeight: FontWeight.w900,
               ),
         ),
-        Container(
-          margin: const EdgeInsets.only(top: 6),
-          child: Text(
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            style: Theme.of(context).textTheme.bodyText1?.copyWith(
-                  color: Colors.grey.shade700,
-                ),
-          ),
+        const StepperItem(
+          title: "Title",
+          subtitle1: "Office",
+          subtitle2: "FEB 2020 - DEC 2030",
+        ),
+        const StepperItem(
+          title: "Title",
+          subtitle1: "Office",
+          subtitle2: "FEB 2020 - DEC 2030",
+          isLast: true,
         ),
         const SizedBox(height: 30),
         Text(

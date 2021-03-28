@@ -1,35 +1,5 @@
 import 'package:flutter/material.dart';
 
-class SimpleStepper extends StatelessWidget {
-  const SimpleStepper({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: const [
-        StepperItem(
-          title: "Title",
-          subtitle1: "Office",
-          subtitle2: "FEB 2020 - DEC 2030",
-          text:
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        ),
-        StepperItem(
-          title: "Title",
-          subtitle1: "Office",
-          subtitle2: "FEB 2020 - DEC 2030",
-          text:
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          isLast: true,
-        ),
-      ],
-    );
-  }
-}
-
 class StepperItem extends StatelessWidget {
   final bool isLast;
   final String title;
@@ -121,13 +91,15 @@ class StepperItem extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(height: 4),
-              Text(
-                text,
-                style: Theme.of(context).textTheme.bodyText1?.copyWith(
-                      color: Colors.grey.shade700,
-                    ),
-              ),
+              if (text != '') ...[
+                const SizedBox(height: 4),
+                Text(
+                  text,
+                  style: Theme.of(context).textTheme.bodyText1?.copyWith(
+                        color: Colors.grey.shade700,
+                      ),
+                ),
+              ],
             ],
           ),
         ),
