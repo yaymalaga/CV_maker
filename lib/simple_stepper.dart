@@ -10,23 +10,47 @@ class SimpleStepper extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: const [
-        StepperItem(),
-        StepperItem(),
-        StepperItem(),
+        StepperItem(
+          title: "Title",
+          subtitle1: "Office",
+          subtitle2: "FEB 2020 - DEC 2030",
+          text:
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        ),
+        StepperItem(
+          title: "Title",
+          subtitle1: "Office",
+          subtitle2: "FEB 2020 - DEC 2030",
+          text:
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          isLast: true,
+        ),
       ],
     );
   }
 }
 
 class StepperItem extends StatelessWidget {
+  final bool isLast;
+  final String title;
+  final String subtitle1;
+  final String subtitle2;
+  final String text;
+
   const StepperItem({
     Key? key,
+    this.isLast = false,
+    this.title = "",
+    this.subtitle1 = "",
+    this.subtitle2 = "",
+    this.text = "",
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
           children: [
@@ -50,7 +74,7 @@ class StepperItem extends StatelessWidget {
             ),
             const SizedBox(width: 12),
             Text(
-              "Birthday",
+              title,
               style: Theme.of(context).textTheme.subtitle2?.copyWith(
                     color: Colors.lightBlue.shade700,
                     fontWeight: FontWeight.bold,
@@ -60,11 +84,15 @@ class StepperItem extends StatelessWidget {
         ),
         Container(
           margin: const EdgeInsets.only(left: 7.5),
-          padding: const EdgeInsets.only(left: 20.5, top: 6, bottom: 15),
+          padding: EdgeInsets.only(
+            left: 19.5,
+            top: 6,
+            bottom: isLast ? 0 : 15,
+          ),
           decoration: BoxDecoration(
             border: Border(
               left: BorderSide(
-                color: Colors.grey.shade300,
+                color: isLast ? Colors.transparent : Colors.grey.shade300,
                 width: 2,
               ),
             ),
@@ -77,23 +105,25 @@ class StepperItem extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
-                    "Company".toUpperCase(),
+                    subtitle1.toUpperCase(),
                     style: Theme.of(context).textTheme.caption?.copyWith(
-                          color: Colors.black,
+                          color: Colors.grey.shade900,
                           fontWeight: FontWeight.w900,
                         ),
                   ),
                   const SizedBox(width: 8),
                   Text(
-                    "Feb 2020 - Dec 2030",
+                    subtitle2,
                     style: Theme.of(context).textTheme.caption?.copyWith(
-                          color: Colors.grey.shade700,
+                          color: Colors.grey.shade600,
+                          fontWeight: FontWeight.w900,
                         ),
                   ),
                 ],
               ),
+              const SizedBox(height: 4),
               Text(
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                text,
                 style: Theme.of(context).textTheme.bodyText1?.copyWith(
                       color: Colors.grey.shade700,
                     ),
