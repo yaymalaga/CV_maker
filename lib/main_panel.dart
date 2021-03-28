@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'simple_stepper.dart';
+import 'skill_bar.dart';
 
 class MainPanel extends StatelessWidget {
   const MainPanel({
@@ -39,6 +40,26 @@ class MainPanel extends StatelessWidget {
                   color: Colors.grey.shade700,
                 ),
           ),
+        ),
+        const SizedBox(height: 30),
+        Text(
+          "Skills".toUpperCase(),
+          style: Theme.of(context).textTheme.subtitle2?.copyWith(
+                color: Colors.grey.shade900,
+                fontWeight: FontWeight.w900,
+              ),
+        ),
+        Container(
+          margin: const EdgeInsets.only(top: 6),
+          child: const SkillBar(),
+        ),
+        Container(
+          margin: const EdgeInsets.only(top: 6),
+          child: const SkillBar(),
+        ),
+        Container(
+          margin: const EdgeInsets.only(top: 6),
+          child: const SkillBar(),
         ),
         const SizedBox(height: 30),
       ],
