@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'simple_stepper.dart';
+
 class MainPanel extends StatelessWidget {
   const MainPanel({
     Key? key,
@@ -19,7 +21,7 @@ class MainPanel extends StatelessWidget {
         ),
         Container(
           margin: const EdgeInsets.only(top: 6),
-          child: const Stepper(),
+          child: const SimpleStepper(),
         ),
         const SizedBox(height: 30),
         Text(
