@@ -44,6 +44,7 @@ class MainPanel extends StatelessWidget {
                 fontWeight: FontWeight.w900,
               ),
         ),
+        const SizedBox(height: 6),
         const StepperItem(
           title: "Title",
           subtitle1: "Office",
@@ -64,6 +65,73 @@ class MainPanel extends StatelessWidget {
           ],
         ),
         const SizedBox(height: 30),
+        Text(
+          "Extra".toUpperCase(),
+          style: Theme.of(context).textTheme.subtitle2?.copyWith(
+                color: Colors.grey.shade900,
+                fontWeight: FontWeight.w900,
+              ),
+        ),
+        const SizedBox(height: 6),
+        Row(
+          children: [
+            Container(
+              width: 8,
+              height: 8,
+              decoration: BoxDecoration(
+                color: Colors.lightBlue.shade600,
+                shape: BoxShape.circle,
+              ),
+            ),
+            SizedBox(width: 20.5),
+            Text(
+              "Lorem",
+              style: Theme.of(context).textTheme.bodyText1?.copyWith(
+                    color: Colors.grey.shade700,
+                  ),
+            ),
+          ],
+        ),
+        const SizedBox(height: 6),
+        Row(
+          children: [
+            Container(
+              width: 8,
+              height: 8,
+              decoration: BoxDecoration(
+                color: Colors.lightBlue.shade600,
+                shape: BoxShape.circle,
+              ),
+            ),
+            SizedBox(width: 20.5),
+            Text(
+              "Impsum",
+              style: Theme.of(context).textTheme.bodyText1?.copyWith(
+                    color: Colors.grey.shade700,
+                  ),
+            ),
+          ],
+        ),
+        const SizedBox(height: 6),
+        Row(
+          children: [
+            Container(
+              width: 8,
+              height: 8,
+              decoration: BoxDecoration(
+                color: Colors.lightBlue.shade600,
+                shape: BoxShape.circle,
+              ),
+            ),
+            SizedBox(width: 20.5),
+            Text(
+              "Amet",
+              style: Theme.of(context).textTheme.bodyText1?.copyWith(
+                    color: Colors.grey.shade700,
+                  ),
+            ),
+          ],
+        )
       ],
     );
   }
@@ -98,7 +166,6 @@ class SkillsSection extends StatelessWidget {
           margin: const EdgeInsets.only(top: 6),
           child: const SkillBar(),
         ),
-        const SizedBox(height: 30),
       ],
     );
   }
