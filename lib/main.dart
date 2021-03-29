@@ -7,6 +7,8 @@ import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:printing/printing.dart';
 
+import 'pdf/side_panel.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -45,6 +47,23 @@ Future<Uint8List> generatePdf() async {
           children: [
             pw.Text("HEY!"),
             HeaderPDF(title: "title"),
+            pw.Row(
+              children: [
+                pw.Expanded(
+                  child: pw.Container(
+                    padding: const pw.EdgeInsets.fromLTRB(36, 18, 18, 42),
+                    child: SidePanelPDF(),
+                  ),
+                ),
+                pw.Expanded(
+                  flex: 2,
+                  child: pw.Container(
+                    padding: const pw.EdgeInsets.fromLTRB(18, 18, 36, 42),
+                    child: pw.Container(),
+                  ),
+                )
+              ],
+            ),
             pw.Text("HEY!"),
           ],
         );
