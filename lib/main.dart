@@ -1,5 +1,6 @@
 import 'dart:typed_data';
 
+import 'package:cv_maker/pdf/header_pdf.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pdf/pdf.dart';
@@ -24,17 +25,10 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         backgroundColor: Colors.lightBlue.shade100,
-        body: ConstrainedBox(
-          constraints: const BoxConstraints(
-            maxWidth: 760, // ?¿?¿? A4 width: 210 -> 1mm = 6.2992dp
-          ),
-          child: Container(
-            color: Colors.white,
-            child: PdfPreview(
-              build: (format) => generatePdf(),
-            ), //Home(),
-          ),
-        ),
+        body: PdfPreview(
+          maxPageWidth: 700,
+          build: (format) => generatePdf(),
+        ), //Home(),
       ),
     );
   }
@@ -47,8 +41,12 @@ Future<Uint8List> generatePdf() async {
     pw.Page(
       pageFormat: PdfPageFormat.a4,
       build: (context) {
-        return pw.Center(
-          child: pw.Text("Hello World"),
+        return pw.Column(
+          children: [
+            pw.Text("HEY!"),
+            HeaderPDF(title: "title"),
+            pw.Text("HEY!"),
+          ],
         );
       },
     ),
