@@ -7,7 +7,8 @@ import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:printing/printing.dart';
 
-import 'pdf/side_panel.dart';
+import 'pdf/side_panel_pdf.dart';
+import 'pdf/stepper_item_pdf.dart';
 
 void main() {
   runApp(MyApp());
@@ -41,11 +42,11 @@ Future<Uint8List> generatePdf() async {
 
   pdf.addPage(
     pw.Page(
+      margin: const pw.EdgeInsets.all(0),
       pageFormat: PdfPageFormat.a4,
       build: (context) {
         return pw.Column(
           children: [
-            pw.Text("HEY!"),
             HeaderPDF(title: "title"),
             pw.Row(
               children: [
@@ -59,12 +60,16 @@ Future<Uint8List> generatePdf() async {
                   flex: 2,
                   child: pw.Container(
                     padding: const pw.EdgeInsets.fromLTRB(18, 18, 36, 42),
-                    child: pw.Container(),
+                    child: pw.Column(
+                      children: [
+                        StepperItemPDF(),
+                        StepperItemPDF(),
+                      ],
+                    ),
                   ),
                 )
               ],
             ),
-            pw.Text("HEY!"),
           ],
         );
       },
