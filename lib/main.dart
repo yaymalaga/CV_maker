@@ -1,12 +1,14 @@
 import 'dart:typed_data';
 
 import 'package:cv_maker/pdf/header_pdf.dart';
+import 'package:cv_maker/pdf/layout_pdf.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:printing/printing.dart';
 
+import 'pdf/generate_pdf.dart';
 import 'pdf/side_panel_pdf.dart';
 import 'pdf/stepper_item_pdf.dart';
 
@@ -35,46 +37,4 @@ class MyApp extends StatelessWidget {
       ),
     );
   }
-}
-
-Future<Uint8List> generatePdf() async {
-  final pdf = pw.Document();
-
-  pdf.addPage(
-    pw.Page(
-      margin: const pw.EdgeInsets.all(0),
-      pageFormat: PdfPageFormat.a4,
-      build: (context) {
-        return pw.Column(
-          children: [
-            HeaderPDF(title: "title"),
-            pw.Row(
-              children: [
-                pw.Expanded(
-                  child: pw.Container(
-                    padding: const pw.EdgeInsets.fromLTRB(36, 18, 18, 42),
-                    child: SidePanelPDF(),
-                  ),
-                ),
-                pw.Expanded(
-                  flex: 2,
-                  child: pw.Container(
-                    padding: const pw.EdgeInsets.fromLTRB(18, 18, 36, 42),
-                    child: pw.Column(
-                      children: [
-                        StepperItemPDF(),
-                        StepperItemPDF(),
-                      ],
-                    ),
-                  ),
-                )
-              ],
-            ),
-          ],
-        );
-      },
-    ),
-  );
-
-  return pdf.save();
 }
