@@ -1,6 +1,7 @@
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 
+import 'skill_bar_pdf.dart';
 import 'stepper_item_pdf.dart';
 
 const PdfColor green = PdfColor.fromInt(0xff9ce5d0);
@@ -24,6 +25,14 @@ class MainPanelPDF extends pw.StatelessWidget {
         pw.SizedBox(height: 6),
         StepperItemPDF(),
         StepperItemPDF(),
+        pw.SizedBox(height: 30),
+        pw.Row(
+          mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
+          children: [
+            SkillsSectionPDF(),
+            SkillsSectionPDF(),
+          ],
+        ),
         pw.SizedBox(height: 30),
         pw.Text(
           "Extra".toUpperCase(),
