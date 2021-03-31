@@ -19,6 +19,7 @@ class LayoutPDF extends pw.StatelessWidget {
       children: [
         HeaderPDF(title: "title"),
         pw.Row(
+          crossAxisAlignment: pw.CrossAxisAlignment.start,
           children: [
             pw.Expanded(
               child: pw.Container(
