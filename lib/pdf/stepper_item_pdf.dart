@@ -27,14 +27,17 @@ class StepperItemPDF extends pw.StatelessWidget {
               ),
             ),
             pw.SizedBox(width: 10),
-            pw.Text("Oh yeaaah!!!!!", style: pw.Theme.of(context).header3),
+            pw.Text(
+              "Oh yeaaah!!!!!",
+              style: pw.Theme.of(context).header3,
+            ),
           ],
         ),
         pw.Container(
           margin: const pw.EdgeInsets.only(left: 3), // Bullet_width/2
           padding: pw.EdgeInsets.only(
             left: 13, //Sizebox_width + Bullet_width/2
-            top: 6,
+            top: 4,
             bottom: isLast ? 0 : 12,
           ),
           decoration: pw.BoxDecoration(
@@ -51,9 +54,26 @@ class StepperItemPDF extends pw.StatelessWidget {
             crossAxisAlignment: pw.CrossAxisAlignment.start,
             mainAxisSize: pw.MainAxisSize.min,
             children: [
+              pw.Row(
+                mainAxisAlignment: pw.MainAxisAlignment.spaceBetween,
+                children: [
+                  pw.Text(
+                    "Company".toUpperCase(),
+                    style: pw.Theme.of(context).header4.copyWith(
+                          fontWeight: pw.FontWeight.bold,
+                        ),
+                  ),
+                  pw.Text(
+                    "Feb 2020 - Feb 2030".toUpperCase(),
+                    style: pw.Theme.of(context).header4,
+                  ),
+                ],
+              ),
+              pw.SizedBox(height: 3),
               pw.Text(
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                 style: pw.Theme.of(context).paragraphStyle,
+                textAlign: pw.TextAlign.justify,
               ),
             ],
           ),

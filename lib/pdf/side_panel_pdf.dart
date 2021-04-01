@@ -20,6 +20,7 @@ class SidePanelPDF extends pw.StatelessWidget {
           child: pw.Text(
             "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             style: pw.Theme.of(context).paragraphStyle,
+            textAlign: pw.TextAlign.justify,
           ),
         ),
         pw.SizedBox(height: 30),

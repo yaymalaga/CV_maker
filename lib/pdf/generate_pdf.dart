@@ -40,10 +40,9 @@ Future<Uint8List> generatePdf() async {
           fontSize: 11,
           fontWeight: FontWeight.bold,
         ),
-        header4: TextStyle(
+        header4: const TextStyle(
           color: grey,
-          fontSize: 10,
-          fontWeight: FontWeight.bold,
+          fontSize: 9,
         ),
         paragraphStyle: const TextStyle(
           color: grey,
