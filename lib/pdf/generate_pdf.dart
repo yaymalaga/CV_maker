@@ -9,14 +9,21 @@ import 'layout_pdf.dart';
 
 Future<Uint8List> generatePdf() async {
   final pdf = Document();
+  final faBrands =
+      Font.ttf(await rootBundle.load('assets/icons/fa_brands.ttf'));
 
   pdf.addPage(
     Page(
       margin: const EdgeInsets.all(0),
       pageFormat: PdfPageFormat.a4,
       theme: ThemeData.withFont(
-        base: Font.ttf(await rootBundle.load('assets/Quicksand_Regular.ttf')),
-        bold: Font.ttf(await rootBundle.load('assets/Quicksand_Bold.ttf')),
+        base: Font.ttf(
+          await rootBundle.load('assets/fonts/Quicksand_Regular.ttf'),
+        ),
+        bold: Font.ttf(
+          await rootBundle.load('assets/fonts/Quicksand_Bold.ttf'),
+        ),
+        icons: Font.ttf(await rootBundle.load('assets/icons/fa_solid.ttf')),
       ).copyWith(
         header1: TextStyle(
           color: blue,
@@ -45,7 +52,7 @@ Future<Uint8List> generatePdf() async {
         ),
       ),
       build: (context) {
-        return LayoutPDF();
+        return LayoutPDF(faBrands: faBrands);
       },
     ),
   );

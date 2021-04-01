@@ -5,7 +5,9 @@ import 'main_panel_pdf.dart';
 import 'side_panel_pdf.dart';
 
 class LayoutPDF extends pw.StatelessWidget {
-  LayoutPDF();
+  final pw.Font faBrands;
+
+  LayoutPDF({required this.faBrands});
 
   @override
   pw.Widget build(pw.Context context) {
@@ -18,7 +20,7 @@ class LayoutPDF extends pw.StatelessWidget {
             pw.Expanded(
               child: pw.Container(
                 padding: const pw.EdgeInsets.fromLTRB(36, 18, 18, 42),
-                child: SidePanelPDF(),
+                child: SidePanelPDF(faBrands: faBrands),
               ),
             ),
             pw.Expanded(
