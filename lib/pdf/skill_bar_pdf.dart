@@ -1,8 +1,6 @@
-import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart';
 
-const PdfColor green = PdfColor.fromInt(0xff9ce5d0);
-const PdfColor lightGreen = PdfColor.fromInt(0xffcdf1e7);
+import 'colors.dart';
 
 class SkillsSectionPDF extends StatelessWidget {
   SkillsSectionPDF();
@@ -14,9 +12,7 @@ class SkillsSectionPDF extends StatelessWidget {
       children: [
         Text(
           "Skills".toUpperCase(),
-          style: Theme.of(context).defaultTextStyle.copyWith(
-                fontWeight: FontWeight.bold,
-              ),
+          style: Theme.of(context).header2,
         ),
         Container(
           margin: const EdgeInsets.only(top: 6),
@@ -53,7 +49,7 @@ class SkillBar extends StatelessWidget {
         SizedBox(width: 12),
         Text(
           "Skill1",
-          style: Theme.of(context).defaultTextStyle,
+          style: Theme.of(context).paragraphStyle,
         ),
       ],
     );
@@ -73,7 +69,7 @@ class SkillBarPiece extends StatelessWidget {
       width: 23,
       height: 4,
       decoration: BoxDecoration(
-        color: fill ? green : lightGreen,
+        color: fill ? blue : lightBlue,
         borderRadius: const BorderRadius.all(
           Radius.circular(2),
         ),

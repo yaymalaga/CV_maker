@@ -1,19 +1,9 @@
-import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 
-const PdfColor green = PdfColor.fromInt(0xff9ce5d0);
-const PdfColor lightGreen = PdfColor.fromInt(0xffcdf1e7);
-const sep = 120.0;
+import 'colors.dart';
 
 class HeaderPDF extends pw.StatelessWidget {
-  HeaderPDF({
-    required this.title,
-    this.icon,
-  });
-
-  final String title;
-
-  final pw.IconData? icon;
+  HeaderPDF();
 
   @override
   pw.Widget build(pw.Context context) {
@@ -28,10 +18,7 @@ class HeaderPDF extends pw.StatelessWidget {
                 height: constraint?.maxWidth,
                 decoration: const pw.BoxDecoration(
                   shape: pw.BoxShape.circle,
-                  color: green,
-                ),
-                child: pw.Center(
-                  child: pw.Text("HEY!"),
+                  color: blue,
                 ),
               ),
             ),
@@ -47,18 +34,13 @@ class HeaderPDF extends pw.StatelessWidget {
               children: [
                 pw.Text(
                   "Name1 Name2 Name3",
-                  style: pw.Theme.of(context).header1.copyWith(
-                        height: 1,
-                        color: green,
-                      ),
+                  style: pw.Theme.of(context).header1,
                 ),
                 pw.Container(
                   margin: const pw.EdgeInsets.only(top: 10),
                   child: pw.Text(
                     "Whatever Whatever Whatever Whatever".toUpperCase(),
-                    style: pw.Theme.of(context).defaultTextStyle.copyWith(
-                          fontWeight: pw.FontWeight.bold,
-                        ),
+                    style: pw.Theme.of(context).header2,
                   ),
                 ),
               ],
@@ -67,38 +49,5 @@ class HeaderPDF extends pw.StatelessWidget {
         ),
       ],
     );
-
-    pw.Column(
-        crossAxisAlignment: pw.CrossAxisAlignment.start,
-        children: <pw.Widget>[
-          pw.Row(
-              crossAxisAlignment: pw.CrossAxisAlignment.start,
-              children: <pw.Widget>[
-                pw.Container(
-                  width: 6,
-                  height: 6,
-                  margin: const pw.EdgeInsets.only(top: 2.5, left: 2, right: 5),
-                  decoration: const pw.BoxDecoration(
-                      color: green, shape: pw.BoxShape.circle),
-                ),
-                pw.Text(title,
-                    style: pw.Theme.of(context)
-                        .defaultTextStyle
-                        .copyWith(fontWeight: pw.FontWeight.bold)),
-                pw.Spacer(),
-                if (icon != null) pw.Icon(icon!, color: lightGreen, size: 18),
-              ]),
-          pw.Container(
-            decoration: const pw.BoxDecoration(
-                border: pw.Border(left: pw.BorderSide(color: green, width: 2))),
-            padding: const pw.EdgeInsets.only(left: 10, top: 5, bottom: 5),
-            margin: const pw.EdgeInsets.only(left: 5),
-            child: pw.Column(
-                crossAxisAlignment: pw.CrossAxisAlignment.start,
-                children: <pw.Widget>[
-                  pw.Lorem(length: 20),
-                ]),
-          ),
-        ]);
   }
 }

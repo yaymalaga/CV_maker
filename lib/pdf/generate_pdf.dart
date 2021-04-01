@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart';
 
+import 'colors.dart';
 import 'layout_pdf.dart';
 
 Future<Uint8List> generatePdf() async {
@@ -16,6 +17,32 @@ Future<Uint8List> generatePdf() async {
       theme: ThemeData.withFont(
         base: Font.ttf(await rootBundle.load('assets/Quicksand_Regular.ttf')),
         bold: Font.ttf(await rootBundle.load('assets/Quicksand_Bold.ttf')),
+      ).copyWith(
+        header1: TextStyle(
+          color: blue,
+          fontSize: 30,
+          fontWeight: FontWeight.bold,
+        ),
+        header2: TextStyle(
+          color: grey,
+          fontSize: 12,
+          fontWeight: FontWeight.bold,
+        ),
+        header3: TextStyle(
+          color: blue,
+          fontSize: 11,
+          fontWeight: FontWeight.bold,
+        ),
+        header4: TextStyle(
+          color: grey,
+          fontSize: 10,
+          fontWeight: FontWeight.bold,
+        ),
+        paragraphStyle: const TextStyle(
+          color: grey,
+          fontSize: 11,
+          lineSpacing: 1,
+        ),
       ),
       build: (context) {
         return LayoutPDF();

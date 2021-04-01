@@ -1,12 +1,14 @@
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 
-const PdfColor green = PdfColor.fromInt(0xff9ce5d0);
-const PdfColor lightGreen = PdfColor.fromInt(0xffcdf1e7);
-const sep = 120.0;
+import 'colors.dart';
 
 class StepperItemPDF extends pw.StatelessWidget {
-  StepperItemPDF();
+  final bool isLast;
+
+  StepperItemPDF({
+    this.isLast = false,
+  });
 
   @override
   pw.Widget build(pw.Context context) {
@@ -17,43 +19,31 @@ class StepperItemPDF extends pw.StatelessWidget {
         pw.Row(
           children: [
             pw.Container(
-              width: 17,
-              height: 17,
+              width: 6,
+              height: 6,
               decoration: const pw.BoxDecoration(
-                color: lightGreen,
+                color: blue,
                 shape: pw.BoxShape.circle,
               ),
-              child: pw.Center(
-                child: pw.Container(
-                  width: 8,
-                  height: 8,
-                  decoration: pw.BoxDecoration(
-                    color: green,
-                    shape: pw.BoxShape.circle,
-                  ),
-                ),
-              ),
             ),
-            pw.SizedBox(width: 12),
-            pw.Text(
-              "Oh yeaaah!!!!!",
-              style: pw.Theme.of(context).defaultTextStyle.copyWith(
-                    fontWeight: pw.FontWeight.bold,
-                  ),
-            ),
+            pw.SizedBox(width: 10),
+            pw.Text("Oh yeaaah!!!!!", style: pw.Theme.of(context).header3),
           ],
         ),
         pw.Container(
-          margin: const pw.EdgeInsets.only(left: 7.5),
+          margin: const pw.EdgeInsets.only(left: 3), // Bullet_width/2
           padding: pw.EdgeInsets.only(
-            left: 19.5,
+            left: 13, //Sizebox_width + Bullet_width/2
             top: 6,
-            bottom: 15,
+            bottom: isLast ? 0 : 12,
           ),
           decoration: pw.BoxDecoration(
             border: pw.Border(
               left: pw.BorderSide(
                 width: 2,
+                color: isLast
+                    ? const PdfColor.fromInt(0xffffffff)
+                    : const PdfColor.fromInt(0xffcbcbcb),
               ),
             ),
           ),
@@ -62,8 +52,8 @@ class StepperItemPDF extends pw.StatelessWidget {
             mainAxisSize: pw.MainAxisSize.min,
             children: [
               pw.Text(
-                "SDFDSFDSFDS FDSFFFFFFFFFFFF FFFFFFFF FFFFFFFFFFDF DFDSF sdfdsfs sd fdsf sdfdsf",
-                style: pw.Theme.of(context).defaultTextStyle.copyWith(),
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+                style: pw.Theme.of(context).paragraphStyle,
               ),
             ],
           ),
