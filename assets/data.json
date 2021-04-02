@@ -1,0 +1,96 @@
+{
+    "profile": "Profile example text",
+    "personal": {
+        "birthday": "13/05/21",
+        "nationality": "Earth",
+        "location": "Somewhere",
+        "github": "username",
+        "website": "test.com",
+        "main": "admin@mail.com"
+    },
+    "about" : [
+        "AAAA",
+        "BBBB"
+    ],
+    "experience": [
+        {
+            "title": "Super developer",
+            "company": "Corp",
+            "duration": "feb 2020 - feb 2020",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua."
+        },
+        {
+            "title": "Super developer",
+            "company": "Corp",
+            "duration": "feb 2020 - feb 2020",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua."
+        }
+    ],
+    "education": [
+        {
+            "title": "Super developer school",
+            "place": "Corp",
+            "duration": "feb 2020 - feb 2020"
+        },
+        {
+            "title": "Super developer school",
+            "place": "Corp",
+            "duration": "feb 2020 - feb 2020"
+        }
+    ],
+    "skills_a": {
+        "title": "Skills",
+        "content": [
+            {
+                "label": "Skill1",
+                "grade": 1
+            },
+            {
+                "label": "Skill1",
+                "grade": 2
+            },
+            {
+                "label": "Skill1",
+                "grade": 4
+            }
+        ]
+    },
+    "skills_b": {
+        "title": "Skills",
+        "content": [
+            {
+                "label": "Skill1",
+                "grade": 1
+            },
+            {
+                "label": "Skill1",
+                "grade": 3
+            },
+            {
+                "label": "Skill1",
+                "grade": 0
+            }
+        ]
+    },
+    "extras_a": {
+        "title": "Extra",
+        "content": [
+            "Lorem",
+            "Impsum"
+        ]
+    },
+    "extras_b": {
+        "title": "Extra",
+        "content": [
+            "Lorem",
+            "Impsum"
+        ]
+    },
+    "extras_c": {
+        "title": "Extra",
+        "content": [
+            "Lorem",
+            "Impsum"
+        ]
+    }
+}
