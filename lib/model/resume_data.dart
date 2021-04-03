@@ -11,11 +11,11 @@ class ResumeData with _$ResumeData {
     List<String>? about,
     List<Experience>? experience,
     List<Education>? education,
-    Skills? skillsA,
-    Skills? skillsB,
-    Extras? extrasA,
-    Extras? extrasB,
-    Extras? extrasC,
+    @JsonKey(name: 'skills_a') Skills? skillsA,
+    @JsonKey(name: 'skills_b') Skills? skillsB,
+    @JsonKey(name: 'extras_a') Extras? extrasA,
+    @JsonKey(name: 'extras_b') Extras? extrasB,
+    @JsonKey(name: 'extras_c') Extras? extrasC,
   }) = _ResumeData;
 
   factory ResumeData.fromJson(Map<String, dynamic> json) =>
