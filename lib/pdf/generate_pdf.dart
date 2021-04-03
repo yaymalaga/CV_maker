@@ -1,5 +1,7 @@
+import 'dart:convert';
 import 'dart:typed_data';
 
+import 'package:cv_maker/model/resume_data.dart';
 import 'package:flutter/services.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart';
@@ -11,6 +13,11 @@ Future<Uint8List> generatePdf() async {
   final pdf = Document();
   final faBrands =
       Font.ttf(await rootBundle.load('assets/icons/fa_brands.ttf'));
+
+  final jsonRaw = await rootBundle.loadString('assets/data.json');
+  final jsonData = json.decode(jsonRaw) as Map<String, dynamic>;
+  final resumeData = ResumeData.fromJson(jsonData);
+  print(resumeData.toString());
 
   pdf.addPage(
     Page(
