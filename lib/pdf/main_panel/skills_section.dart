@@ -17,14 +17,18 @@ class SkillsSection extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         if (skillA != null)
-          SkillBlock(
-            title: skillA!.title,
-            items: skillA!.content,
+          Expanded(
+            child: SkillBlock(
+              title: skillA!.title,
+              items: skillA!.content,
+            ),
           ),
         if (skillB != null)
-          SkillBlock(
-            title: skillB!.title,
-            items: skillB!.content,
+          Expanded(
+            child: SkillBlock(
+              title: skillB!.title,
+              items: skillB!.content,
+            ),
           ),
       ],
     );

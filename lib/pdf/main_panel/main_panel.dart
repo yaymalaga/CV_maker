@@ -35,7 +35,6 @@ class MainPanel extends StatelessWidget {
         ExtrasSection(
           extraA: resumeData.extrasA,
           extraB: resumeData.extrasB,
-          extraC: resumeData.extrasC,
         ),
       ],
     );

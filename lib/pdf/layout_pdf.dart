@@ -25,25 +25,27 @@ class LayoutPDF extends StatelessWidget {
           profession: resumeData.profession,
           picture: picture,
         ),
+        SizedBox(height: 20),
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Expanded(
-              child: Container(
-                padding: const EdgeInsets.fromLTRB(36, 18, 18, 42),
-                child: SidePanel(resumeData: resumeData, faBrands: faBrands),
+              flex: 4,
+              child: SidePanel(
+                resumeData: resumeData,
+                faBrands: faBrands,
               ),
             ),
             Expanded(
-              flex: 2,
+              flex: 11,
               child: Container(
-                padding: const EdgeInsets.fromLTRB(18, 18, 36, 42),
+                margin: const EdgeInsets.only(left: 30),
                 child: MainPanel(
                   resumeData: resumeData,
                   faBrands: faBrands,
                 ),
               ),
-            )
+            ),
           ],
         ),
       ],

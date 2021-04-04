@@ -21,7 +21,7 @@ class PersonalBlock extends StatelessWidget {
       title: "Personal details",
       titleMargin: 8,
       //TODO: Make the whole block generic - elements, icons, font, etc.
-      contentMargin: 30 - itemsSpace,
+      contentMargin: 20 - itemsSpace,
       content: [
         if (items.birthday != null) ...[
           IconTile(

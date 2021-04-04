@@ -18,7 +18,6 @@ class ResumeData with _$ResumeData {
     @JsonKey(name: 'skills_b') Skill? skillsB,
     @JsonKey(name: 'extras_a') Extra? extrasA,
     @JsonKey(name: 'extras_b') Extra? extrasB,
-    @JsonKey(name: 'extras_c') Extra? extrasC,
   }) = _ResumeData;
 
   factory ResumeData.fromJson(Map<String, dynamic> json) =>

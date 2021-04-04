@@ -2,7 +2,7 @@
     "name": "Name1 Name2 Name4",
     "profession": "Whatever Whatever Whatever Whatever",
     "photo_path": "assets/example.png",
-    "profile": "Profile example text",
+    "profile": "Nullam vulputate risus nec enim, mattis posuere tellus posuere nec. Nulla tortor tortor, placerat vel elit sit amet, dictum placerat.",
     "personal": {
         "birthday": "13/05/21",
         "nationality": "Earth",
@@ -83,13 +83,6 @@
         ]
     },
     "extras_b": {
-        "title": "Extra",
-        "content": [
-            "Lorem",
-            "Impsum"
-        ]
-    },
-    "extras_c": {
         "title": "Extra",
         "content": [
             "Lorem",

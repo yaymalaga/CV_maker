@@ -18,29 +18,27 @@ class HeaderPanel extends StatelessWidget {
     return Row(
       children: [
         Expanded(
-          child: Container(
-            margin: const EdgeInsets.fromLTRB(36, 42, 18, 6),
-            child: LayoutBuilder(
-              builder: (context, constraint) => Container(
-                width: constraint?.maxWidth,
-                height: constraint?.maxWidth,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: picture == null ? blue : null,
-                  image: picture != null
-                      ? DecorationImage(
-                          image: picture!,
-                        )
-                      : null,
-                ),
+          flex: 4,
+          child: LayoutBuilder(
+            builder: (context, constraint) => Container(
+              width: constraint?.maxWidth,
+              height: constraint?.maxWidth,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: picture == null ? blue : null,
+                image: picture != null
+                    ? DecorationImage(
+                        image: picture!,
+                      )
+                    : null,
               ),
             ),
           ),
         ),
         Expanded(
-          flex: 2,
+          flex: 11,
           child: Container(
-            padding: const EdgeInsets.fromLTRB(16, 42, 36, 18),
+            margin: const EdgeInsets.only(left: 30),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -49,12 +47,10 @@ class HeaderPanel extends StatelessWidget {
                   name,
                   style: Theme.of(context).header1,
                 ),
-                Container(
-                  margin: const EdgeInsets.only(top: 10),
-                  child: Text(
-                    profession.toUpperCase(),
-                    style: Theme.of(context).header2,
-                  ),
+                SizedBox(height: 10),
+                Text(
+                  profession.toUpperCase(),
+                  style: Theme.of(context).header2,
                 ),
               ],
             ),

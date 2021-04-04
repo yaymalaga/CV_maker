@@ -10,7 +10,7 @@ class Block extends StatelessWidget {
     required this.content,
     required this.title,
     this.titleMargin = 6,
-    this.contentMargin = 30,
+    this.contentMargin = 20,
   });
 
   @override

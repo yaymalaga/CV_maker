@@ -26,7 +26,7 @@ Future<Uint8List> generatePdf() async {
 
   pdf.addPage(
     Page(
-      margin: const EdgeInsets.all(0),
+      margin: const EdgeInsets.symmetric(vertical: 42, horizontal: 38),
       pageFormat: PdfPageFormat.a4,
       theme: ThemeData.withFont(
         base: Font.ttf(
