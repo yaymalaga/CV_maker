@@ -10,7 +10,6 @@ import 'common/colors.dart';
 import 'layout_pdf.dart';
 
 Future<Uint8List> generatePdf() async {
-  print("Generating..");
   final pdf = Document();
   final faBrands =
       Font.ttf(await rootBundle.load('assets/icons/fa_brands.ttf'));
