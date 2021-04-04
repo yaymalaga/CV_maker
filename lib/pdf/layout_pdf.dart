@@ -1,33 +1,47 @@
-import 'package:pdf/widgets.dart' as pw;
+import 'package:pdf/widgets.dart';
 
-import 'header_pdf.dart';
-import 'main_panel_pdf.dart';
-import 'side_panel_pdf.dart';
+import '/model/resume_data.dart';
+import 'header_panel/header_panel.dart';
+import 'main_panel/main_panel.dart';
+import 'side_panel/side_panel.dart';
 
-class LayoutPDF extends pw.StatelessWidget {
-  final pw.Font faBrands;
+class LayoutPDF extends StatelessWidget {
+  final Font faBrands;
+  final MemoryImage? picture;
+  final ResumeData resumeData;
 
-  LayoutPDF({required this.faBrands});
+  LayoutPDF({
+    required this.faBrands,
+    required this.resumeData,
+    this.picture,
+  });
 
   @override
-  pw.Widget build(pw.Context context) {
-    return pw.Column(
+  Widget build(Context context) {
+    return Column(
       children: [
-        HeaderPDF(),
-        pw.Row(
-          crossAxisAlignment: pw.CrossAxisAlignment.start,
+        HeaderPanel(
+          name: resumeData.name,
+          profession: resumeData.profession,
+          picture: picture,
+        ),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            pw.Expanded(
-              child: pw.Container(
-                padding: const pw.EdgeInsets.fromLTRB(36, 18, 18, 42),
-                child: SidePanelPDF(faBrands: faBrands),
+            Expanded(
+              child: Container(
+                padding: const EdgeInsets.fromLTRB(36, 18, 18, 42),
+                child: SidePanel(resumeData: resumeData, faBrands: faBrands),
               ),
             ),
-            pw.Expanded(
+            Expanded(
               flex: 2,
-              child: pw.Container(
-                padding: const pw.EdgeInsets.fromLTRB(18, 18, 36, 42),
-                child: MainPanelPDF(),
+              child: Container(
+                padding: const EdgeInsets.fromLTRB(18, 18, 36, 42),
+                child: MainPanel(
+                  resumeData: resumeData,
+                  faBrands: faBrands,
+                ),
               ),
             )
           ],

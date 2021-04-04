@@ -1,6 +1,5 @@
 import 'dart:typed_data';
 
-import 'package:cv_maker/pdf/header_pdf.dart';
 import 'package:cv_maker/pdf/layout_pdf.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -9,8 +8,8 @@ import 'package:pdf/widgets.dart' as pw;
 import 'package:printing/printing.dart';
 
 import 'pdf/generate_pdf.dart';
-import 'pdf/side_panel_pdf.dart';
-import 'pdf/stepper_item_pdf.dart';
+import 'pdf/side_panel/side_panel.dart';
+import 'pdf/common/stepper_tile.dart';
 
 void main() {
   runApp(MyApp());

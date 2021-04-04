@@ -6,16 +6,19 @@ part 'resume_data.g.dart';
 @freezed
 class ResumeData with _$ResumeData {
   const factory ResumeData({
+    required String name,
+    required String profession,
+    @JsonKey(name: 'photo_path') String? photoPath,
     String? profile,
     Personal? personal,
     List<String>? about,
     List<Experience>? experience,
     List<Education>? education,
-    @JsonKey(name: 'skills_a') Skills? skillsA,
-    @JsonKey(name: 'skills_b') Skills? skillsB,
-    @JsonKey(name: 'extras_a') Extras? extrasA,
-    @JsonKey(name: 'extras_b') Extras? extrasB,
-    @JsonKey(name: 'extras_c') Extras? extrasC,
+    @JsonKey(name: 'skills_a') Skill? skillsA,
+    @JsonKey(name: 'skills_b') Skill? skillsB,
+    @JsonKey(name: 'extras_a') Extra? extrasA,
+    @JsonKey(name: 'extras_b') Extra? extrasB,
+    @JsonKey(name: 'extras_c') Extra? extrasC,
   }) = _ResumeData;
 
   factory ResumeData.fromJson(Map<String, dynamic> json) =>
@@ -48,13 +51,13 @@ class Experience with _$Experience {
 }
 
 @freezed
-class Extras with _$Extras {
-  const factory Extras({
+class Extra with _$Extra {
+  const factory Extra({
     required String title,
     required List<String> content,
-  }) = _Extras;
+  }) = _Extra;
 
-  factory Extras.fromJson(Map<String, dynamic> json) => _$ExtrasFromJson(json);
+  factory Extra.fromJson(Map<String, dynamic> json) => _$ExtraFromJson(json);
 }
 
 @freezed
@@ -65,7 +68,7 @@ class Personal with _$Personal {
     String? location,
     String? github,
     String? website,
-    String? main,
+    String? mail,
   }) = _Personal;
 
   factory Personal.fromJson(Map<String, dynamic> json) =>
@@ -73,13 +76,13 @@ class Personal with _$Personal {
 }
 
 @freezed
-class Skills with _$Skills {
-  const factory Skills({
+class Skill with _$Skill {
+  const factory Skill({
     required String title,
     required List<SkillContent> content,
-  }) = _Skills;
+  }) = _Skill;
 
-  factory Skills.fromJson(Map<String, dynamic> json) => _$SkillsFromJson(json);
+  factory Skill.fromJson(Map<String, dynamic> json) => _$SkillFromJson(json);
 }
 
 @freezed

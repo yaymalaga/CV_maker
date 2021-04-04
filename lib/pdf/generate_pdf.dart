@@ -6,10 +6,11 @@ import 'package:flutter/services.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart';
 
-import 'colors.dart';
+import 'common/colors.dart';
 import 'layout_pdf.dart';
 
 Future<Uint8List> generatePdf() async {
+  print("Generating..");
   final pdf = Document();
   final faBrands =
       Font.ttf(await rootBundle.load('assets/icons/fa_brands.ttf'));
@@ -17,7 +18,12 @@ Future<Uint8List> generatePdf() async {
   final jsonRaw = await rootBundle.loadString('assets/data.json');
   final jsonData = json.decode(jsonRaw) as Map<String, dynamic>;
   final resumeData = ResumeData.fromJson(jsonData);
-  print(resumeData.toString());
+
+  MemoryImage? picture;
+  if (resumeData.photoPath != null) {
+    final pictureRaw = await rootBundle.load(resumeData.photoPath!);
+    picture = MemoryImage(pictureRaw.buffer.asUint8List());
+  }
 
   pdf.addPage(
     Page(
@@ -58,7 +64,11 @@ Future<Uint8List> generatePdf() async {
         ),
       ),
       build: (context) {
-        return LayoutPDF(faBrands: faBrands);
+        return LayoutPDF(
+          resumeData: resumeData,
+          faBrands: faBrands,
+          picture: picture,
+        );
       },
     ),
   );
