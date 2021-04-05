@@ -1,5 +1,5 @@
 name: cv_maker
-description: A new Flutter project.
+description: A CV maker case study.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
@@ -23,8 +23,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  
-  google_fonts: ^2.0.0
   pdf: ^3.1.0
   printing: ^5.0.4
 
