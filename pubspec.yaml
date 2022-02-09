@@ -23,8 +23,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  pdf: ^3.1.0
-  printing: ^5.0.4
+  pdf: ^3.7.1
+  printing: ^5.7.2
 
 dev_dependencies:
   build_runner:
