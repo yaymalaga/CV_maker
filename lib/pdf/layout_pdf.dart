@@ -1,6 +1,7 @@
 import 'package:pdf/widgets.dart';
 
 import '/model/resume_data.dart';
+import 'common/colors.dart';
 import 'header_panel/header_panel.dart';
 import 'main_panel/main_panel.dart';
 import 'side_panel/side_panel.dart';
@@ -47,6 +48,18 @@ class LayoutPDF extends StatelessWidget {
               ),
             ),
           ],
+        ),
+        Expanded(
+          child: Align(
+            alignment: Alignment.bottomCenter,
+            child: Text(
+              "Homemade crafted using Flutter <3",
+              style: Theme.of(context).paragraphStyle.copyWith(
+                    fontWeight: FontWeight.bold,
+                    color: superLightGrey,
+                  ),
+            ),
+          ),
         ),
       ],
     );
