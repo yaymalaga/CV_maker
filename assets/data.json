@@ -9,7 +9,7 @@
         "location": "Somewhere",
         "github": "username",
         "website": "test.com",
-        "main": "admin@mail.com"
+        "mail": "admin@mail.com"
     },
     "about" : [
         "AAAA",
