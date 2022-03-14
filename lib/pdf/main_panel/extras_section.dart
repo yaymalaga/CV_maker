@@ -15,6 +15,7 @@ class ExtrasSection extends StatelessWidget {
   @override
   Widget build(Context context) {
     return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         if (extraA != null)
           Expanded(
