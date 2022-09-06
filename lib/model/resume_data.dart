@@ -68,6 +68,7 @@ class Personal with _$Personal {
     String? github,
     String? website,
     String? mail,
+    String? linkedin,
   }) = _Personal;
 
   factory Personal.fromJson(Map<String, dynamic> json) =>

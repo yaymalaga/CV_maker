@@ -52,6 +52,14 @@ class PersonalBlock extends StatelessWidget {
           ),
           SizedBox(height: itemsSpace),
         ],
+        if (items.linkedin != null) ...[
+          IconTile(
+            iconCode: 0xf0e1,
+            text: items.linkedin!,
+            iconFont: faBrands,
+          ),
+          SizedBox(height: itemsSpace),
+        ],
         if (items.website != null) ...[
           IconTile(
             iconCode: 0xe007,
